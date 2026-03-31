@@ -25,7 +25,7 @@ CrabShell implements a mandatory multi-model security vote before any Shell comm
 ```text
 CrabShell/
 ├── README.md
-├── README_zh.md
+├── README_zh.md 
 ├── requirements.txt
 ├── openclaw.plugin.json     # Plugin manifest (ID: crabshell)
 ├── package.json
