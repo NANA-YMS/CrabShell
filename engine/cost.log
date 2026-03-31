@@ -1,0 +1,325 @@
+2026-03-12 23:53:34 | [未知否决] 模型=deepseek-chat 遭遇未知异常，触发一票否决 | 错误类型=BadRequestError | 错误详情=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-chat
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-03-12 23:53:37 | [认证否决] 模型=gemini/gemini-1.5-flash 密钥认证失败，触发一票否决 | 错误=litellm.AuthenticationError: GeminiException - {
+  "error": {
+    "code": 400,
+    "message": "API key not valid. Please pass a valid API key.",
+    "status": "INVALID_ARGUMENT",
+    "details": [
+      {
+        "@type": "type.googleapis.com/google.rpc.ErrorInfo",
+        "reason": "API_KEY_INVALID",
+        "domain": "googleapis.com",
+        "metadata": {
+          "service": "generativelanguage.googleapis.com"
+        }
+      },
+      {
+        "@type": "type.googleapis.com/google.rpc.LocalizedMessage",
+        "locale": "en-US",
+        "message": "API key not valid. Please pass a valid API key."
+      }
+    ]
+  }
+}
+
+2026-03-12 23:53:37 | [最终裁决] 结果=DENY | 模型明细={'deepseek-chat': 'DENY', 'gemini/gemini-1.5-flash': 'DENY'} | 指令预览=ls -la
+2026-03-12 23:54:46 | [未知否决] 模型=deepseek-chat 遭遇未知异常，触发一票否决 | 错误类型=BadRequestError | 错误详情=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-chat
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-03-12 23:54:48 | [未知否决] 模型=openrouter/google/gemini-flash-1.5 遭遇未知异常，触发一票否决 | 错误类型=NotFoundError | 错误详情=litellm.NotFoundError: NotFoundError: OpenrouterException - {"error":{"message":"No endpoints found for google/gemini-flash-1.5.","code":404},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-12 23:54:48 | [最终裁决] 结果=DENY | 模型明细={'deepseek-chat': 'DENY', 'openrouter/google/gemini-flash-1.5': 'DENY'} | 指令预览=ls -la
+2026-03-12 23:54:48 | [未知否决] 模型=deepseek-chat 遭遇未知异常，触发一票否决 | 错误类型=BadRequestError | 错误详情=litellm.BadRequestError: LLM Provider NOT provided. Pass in the LLM provider you are trying to call. You passed model=deepseek-chat
+ Pass model as E.g. For 'Huggingface' inference endpoints pass in `completion(model='huggingface/starcoder',..)` Learn more: https://docs.litellm.ai/docs/providers
+2026-03-12 23:54:50 | [未知否决] 模型=openrouter/google/gemini-flash-1.5 遭遇未知异常，触发一票否决 | 错误类型=NotFoundError | 错误详情=litellm.NotFoundError: NotFoundError: OpenrouterException - {"error":{"message":"No endpoints found for google/gemini-flash-1.5.","code":404},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-12 23:54:50 | [最终裁决] 结果=DENY | 模型明细={'deepseek-chat': 'DENY', 'openrouter/google/gemini-flash-1.5': 'DENY'} | 指令预览=rm -rf /
+2026-03-13 00:04:00 | [最终裁决] 结果=ALLOW | 模型明细={'SiliconFlow/DeepSeek-V3': 'ALLOW', 'OpenRouter/Gemini-2.0-Flash': 'ALLOW'} | 指令预览=ls -la
+2026-03-13 00:05:12 | [最终裁决] 结果=ALLOW | 模型明细={'SiliconFlow/DeepSeek-V3': 'ALLOW', 'OpenRouter/Gemini-2.0-Flash': 'ALLOW'} | 指令预览=ls -la
+2026-03-13 00:05:12 | [审计拒绝] 模型=OpenRouter/Gemini-2.0-Flash | 原始输出='DENY\n'
+2026-03-13 00:05:21 | [审计拒绝] 模型=SiliconFlow/DeepSeek-V3 | 原始输出='DENY'
+2026-03-13 00:05:21 | [最终裁决] 结果=DENY | 模型明细={'SiliconFlow/DeepSeek-V3': 'DENY', 'OpenRouter/Gemini-2.0-Flash': 'DENY'} | 指令预览=rm -rf /
+2026-03-13 00:15:39 | [超时否决] DeepSeek-V3 (SiliconFlow) 请求超时（>30s），触发一票否决
+2026-03-13 00:15:39 | [超时否决] Gemini-2.0-Flash (OpenRouter) 请求超时（>30s），触发一票否决
+2026-03-13 00:15:39 | [最终裁决] 结果=DENY | 模型明细={'DeepSeek-V3 (SiliconFlow)': 'DENY', 'Gemini-2.0-Flash (OpenRouter)': 'DENY'} | 指令预览=ls -la
+2026-03-13 00:15:43 | [审计拒绝] Gemini-2.0-Flash (OpenRouter) | 原始输出='DENY\n'
+2026-03-13 00:16:09 | [超时否决] DeepSeek-V3 (SiliconFlow) 请求超时（>30s），触发一票否决
+2026-03-13 00:16:09 | [最终裁决] 结果=DENY | 模型明细={'DeepSeek-V3 (SiliconFlow)': 'DENY', 'Gemini-2.0-Flash (OpenRouter)': 'DENY'} | 指令预览=rm -rf /
+2026-03-13 00:17:56 | [未知否决] Gemini-2.0-Flash (OpenRouter) 遭遇未知异常，触发一票否决 | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-13 00:17:56 | [最终裁决] 结果=DENY | 模型明细={'DeepSeek-V3 (SiliconFlow)': 'ALLOW', 'Gemini-2.0-Flash (OpenRouter)': 'DENY'} | 指令预览=ls -la
+2026-03-13 00:17:56 | [未知否决] Gemini-2.0-Flash (OpenRouter) 遭遇未知异常，触发一票否决 | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-13 00:17:58 | [审计拒绝] DeepSeek-V3 (SiliconFlow) | 原始输出='DENY'
+2026-03-13 00:17:58 | [最终裁决] 结果=DENY | 模型明细={'DeepSeek-V3 (SiliconFlow)': 'DENY', 'Gemini-2.0-Flash (OpenRouter)': 'DENY'} | 指令预览=rm -rf /
+2026-03-14 00:08:56 | [审计拒绝] 模型=Qwen/Qwen3.5-4B | 原始输出=''
+2026-03-14 00:09:03 | [最终裁决] 结果=ALLOW | 票数=拒绝1/允许2 | 模型明细={'deepseek-ai/DeepSeek-V3.2': 'ALLOW', 'Qwen/Qwen3.5-4B': 'DENY', 'THUDM/GLM-Z1-32B-0414': 'ALLOW'} | 指令预览=ls -la
+2026-03-14 00:09:05 | [审计拒绝] 模型=deepseek-ai/DeepSeek-V3.2 | 原始输出='DENY'
+2026-03-14 00:09:06 | [审计拒绝] 模型=THUDM/GLM-Z1-32B-0414 | 原始输出='DENY'
+2026-03-14 00:09:33 | [超时否决] 模型=Qwen/Qwen3.5-4B 请求超时（>30s），触发多数表决否决
+2026-03-14 00:09:33 | [最终裁决] 结果=DENY | 票数=拒绝3/允许0 | 模型明细={'deepseek-ai/DeepSeek-V3.2': 'DENY', 'Qwen/Qwen3.5-4B': 'DENY', 'THUDM/GLM-Z1-32B-0414': 'DENY'} | 指令预览=rm -rf /
+2026-03-14 16:42:20 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 16:42:21 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 16:42:26 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-14 16:42:26 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 16:42:27 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 16:42:28 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 16:42:31 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-14 16:42:31 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 16:43:59 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 16:44:05 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-14 16:44:27 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Network connection failed (timeout >30s)
+2026-03-14 16:44:27 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 16:44:28 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 16:44:29 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 16:44:32 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-14 16:44:32 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:07:30 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:07:31 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:07:31 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:07:31 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='ls -la'
+2026-03-14 17:07:31 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:07:32 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:07:32 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:07:32 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:08:26 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:08:26 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:08:26 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:08:26 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='ls -la'
+2026-03-14 17:08:27 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:08:28 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:08:28 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:08:28 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:21:59 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='ALLOW'
+2026-03-14 17:22:00 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:22:01 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:22:01 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 17:22:01 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='DENY'
+2026-03-14 17:22:02 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:22:06 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:22:06 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:23:26 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='ALLOW'
+2026-03-14 17:23:27 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:23:27 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:23:27 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 17:23:28 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='DENY'
+2026-03-14 17:23:28 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:23:28 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:23:28 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:25:24 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:25:24 | [网络错误] anthropic/gemini-2.0-flash-001 [openrouter] | Problem: Bad request | BadRequestError: litellm.BadRequestError: OpenrouterException - {"error":{"message":"anthropic/gemini-2.0-flash-001 is not a valid model ID","code":400},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-14 17:25:53 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Network connection failed (timeout >30s)
+2026-03-14 17:25:53 | [最终裁决] verdict=DENY | deny=2 allow=1 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'anthropic/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='ls -la'
+2026-03-14 17:25:53 | [网络错误] anthropic/gemini-2.0-flash-001 [openrouter] | Problem: Bad request | BadRequestError: litellm.BadRequestError: OpenrouterException - {"error":{"message":"anthropic/gemini-2.0-flash-001 is not a valid model ID","code":400},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-14 17:25:53 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:25:54 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:25:54 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'anthropic/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:27:00 | [网络错误] anthropic/gemini-2.0-flash-001 [openrouter] | Problem: Bad request | BadRequestError: litellm.BadRequestError: OpenrouterException - {"error":{"message":"anthropic/gemini-2.0-flash-001 is not a valid model ID","code":400},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-14 17:27:02 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:27:02 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:27:02 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'anthropic/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='ls -la'
+2026-03-14 17:27:03 | [网络错误] anthropic/gemini-2.0-flash-001 [openrouter] | Problem: Bad request | BadRequestError: litellm.BadRequestError: OpenrouterException - {"error":{"message":"anthropic/gemini-2.0-flash-001 is not a valid model ID","code":400},"user_id":"user_37lBmSqJBxYD1luPbDzBCGtvhY5"}
+2026-03-14 17:27:03 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:27:04 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:27:04 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'anthropic/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:31:22 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:31:24 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:31:27 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-14 17:31:27 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 17:31:28 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:31:30 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:31:31 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-14 17:31:31 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:32:11 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:32:11 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:32:12 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:32:12 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='ls -la'
+2026-03-14 17:32:12 | [未知否决] google/gemini-2.0-flash-001 [openrouter] | 错误类型=APIError | 错误详情=litellm.APIError: APIError: OpenrouterException - {"error":{"message":"This model is not available in your region.","code":403}}
+2026-03-14 17:32:12 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:32:12 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:32:12 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:39:24 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='ALLOW'
+2026-03-14 17:39:25 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:39:26 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:39:26 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 17:39:27 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='DENY'
+2026-03-14 17:39:27 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:39:29 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:39:29 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 17:48:12 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='ALLOW'
+2026-03-14 17:48:13 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 17:48:15 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-14 17:48:15 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'google/gemini-2.0-flash-001 [openrouter]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 17:48:16 | [模型输出] google/gemini-2.0-flash-001 [openrouter] | output='DENY'
+2026-03-14 17:48:16 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 17:48:17 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 17:48:17 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'google/gemini-2.0-flash-001 [openrouter]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 22:22:41 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 22:22:48 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-14 22:23:08 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Network connection failed (timeout >30s)
+2026-03-14 22:23:08 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-14 22:23:09 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-14 22:23:11 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 22:23:14 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-14 22:23:14 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-14 22:29:02 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-14 22:29:02 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-14 22:29:10 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-14 22:29:10 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='[工作目录: /home/user]
+ls -la'
+2026-03-15 21:37:18 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-15 21:37:18 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 21:37:18 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-15 22:03:17 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-15 22:03:17 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:03:17 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-15 22:04:15 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-15 22:04:15 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:04:15 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-15 22:04:47 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-15 22:04:50 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-15 22:04:54 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-15 22:04:54 | [最终裁决] verdict=ALLOW | deny=1 allow=2 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-15 22:04:55 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-15 22:04:55 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-15 22:04:59 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-15 22:04:59 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-15 22:55:37 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-15 22:55:37 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-15 22:55:37 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-15 22:56:30 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-15 22:56:33 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-15 22:56:36 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-15 22:56:36 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-15 22:56:36 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-15 22:56:39 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-15 22:56:49 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-15 22:56:49 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:17:56 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:17:56 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:17:56 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:21:25 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:21:25 | [配置错误] deepseek-ai/DeepSeek-V3 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [配置错误] Qwen/Qwen3-8B [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [配置错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | SILICONFLOW_API_KEY 未在 .env 中配置 | verdict=DENY
+2026-03-16 09:21:25 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:21:42 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:21:42 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:21:42 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:22:10 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:22:10 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:10 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:22:45 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:22:45 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:22:45 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:24:17 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:24:17 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:24:17 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:25:51 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:25:51 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:25:51 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:26:59 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:26:59 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:26:59 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:29:05 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:29:05 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:29:05 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:34:07 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='ls -la'
+2026-03-16 09:34:08 | [网络错误] THUDM/GLM-Z1-32B-0414 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [网络错误] Qwen/Qwen3-8B [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [网络错误] deepseek-ai/DeepSeek-V3 [siliconflow] | Problem: Authentication failed | AuthenticationError
+2026-03-16 09:34:08 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:37:36 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-16 09:37:36 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-16 09:37:41 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-16 09:37:41 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-16 09:37:42 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-16 09:37:43 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-16 09:37:45 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-16 09:37:45 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-16 09:38:28 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-16 09:38:32 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-16 09:38:44 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-16 09:38:44 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-16 09:38:45 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-16 09:38:45 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-16 09:38:47 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-16 09:38:47 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-18 09:51:07 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-18 09:51:08 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-18 09:51:19 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-18 09:51:19 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-18 09:51:19 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-18 09:51:20 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-18 09:51:24 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-18 09:51:24 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'
+2026-03-18 09:52:22 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='ALLOW'
+2026-03-18 09:52:23 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='ALLOW'
+2026-03-18 09:52:30 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='ALLOW'
+2026-03-18 09:52:30 | [最终裁决] verdict=ALLOW | deny=0 allow=3 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'ALLOW', 'Qwen/Qwen3-8B [siliconflow]': 'ALLOW', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'ALLOW'} | cmd='ls -la'
+2026-03-18 09:52:31 | [模型输出] Qwen/Qwen3-8B [siliconflow] | output='DENY'
+2026-03-18 09:52:31 | [模型输出] deepseek-ai/DeepSeek-V3 [siliconflow] | output='DENY'
+2026-03-18 09:52:37 | [模型输出] THUDM/GLM-Z1-32B-0414 [siliconflow] | output='DENY'
+2026-03-18 09:52:37 | [最终裁决] verdict=DENY | deny=3 allow=0 | details={'deepseek-ai/DeepSeek-V3 [siliconflow]': 'DENY', 'Qwen/Qwen3-8B [siliconflow]': 'DENY', 'THUDM/GLM-Z1-32B-0414 [siliconflow]': 'DENY'} | cmd='rm -rf /'

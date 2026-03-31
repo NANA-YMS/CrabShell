@@ -1,0 +1,8 @@
+# OpenClaw-Consensus 审计服务依赖（Python 3.10+）
+# 安装：pip install -r requirements.txt
+
+litellm>=1.0.0
+fastapi>=0.100.0
+uvicorn>=0.22.0
+pydantic>=2.0.0
+python-dotenv>=1.0.0

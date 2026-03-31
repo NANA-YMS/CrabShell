@@ -1,0 +1,11 @@
+{
+  "id": "crabshell",
+  "name": "CrabShell",
+  "version": "2.0.0",
+  "description": "Multi-model consensus security audit layer for OpenClaw command execution.",
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {}
+  }
+}
